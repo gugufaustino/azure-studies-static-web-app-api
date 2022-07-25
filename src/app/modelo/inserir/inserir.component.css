@@ -1,0 +1,29 @@
+
+.card{
+  background-color: #1b1f31;
+}
+.card-header {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 0;
+  /* padding-bottom: 0px; */
+}
+
+/* box imagem  */
+.box-img-perfil{
+  width: 160px;
+  margin: auto;
+}
+
+.img-no-profile {
+  border-radius: 50%;
+  background-color: transparent;
+  color: #415364;
+  border: 1px solid #9f1c1c00;
+  font-size: 150px;
+
+}
+
+.coluna-controles span.input-group-text{
+  background-color: #283144 !important;
+  padding: 3px 5px;
+}

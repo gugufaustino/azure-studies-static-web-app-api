@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "8a12f643-54b1-4ac5-8f69-ddeac6d23c36"
+    "analytics": false
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "azure-static-web-app": {
+    "my-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -30,17 +30,75 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/vendor/fonts/boxicons.css" ,
+              "src/assets/vendor/fonts/fontawesome.css",
+              "src/assets/vendor/fonts/flag-icons.css" ,
+              "src/assets/css/demo.css" ,
+              "src/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
+              "src/assets/vendor/libs/typeahead-js/typeahead.css"  ,
+              "src/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" ,
+              "src/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" ,
+              "src/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"  ,
+              "src/assets/vendor/libs/select2/select2.css"  ,
+              "src/assets/vendor/libs/formvalidation/dist/css/formValidation.min.css"  ,
+              "src/assets/vendor/libs/apex-charts/apex-charts.css",
+
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/libs/jquery/jquery.js",
+              "src/assets/vendor/libs/popper/popper.js",
+              "src/assets/vendor/js/bootstrap.js",
+              "src/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js",
+              "src/assets/vendor/libs/hammer/hammer.js",
+              "src/assets/vendor/libs/i18n/i18n.js",
+              "src/assets/vendor/libs/typeahead-js/typeahead.js",
+              "src/assets/vendor/libs/apex-charts/apexcharts.js",
+              "src/assets/vendor/libs/moment/moment.js",
+              "src/assets/vendor/libs/datatables/jquery.dataTables.js",
+              "src/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js",
+              "src/assets/vendor/libs/datatables-responsive/datatables.responsive.js",
+              "src/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.js",
+              "src/assets/vendor/libs/datatables-buttons/datatables-buttons.js",
+              "src/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.js",
+              "src/assets/vendor/libs/jszip/jszip.js",
+              "src/assets/vendor/libs/pdfmake/pdfmake.js",
+              "src/assets/vendor/libs/datatables-buttons/buttons.html5.js",
+              "src/assets/vendor/libs/datatables-buttons/buttons.print.js",
+              "src/assets/vendor/libs/select2/select2.js",
+              "src/assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js",
+              "src/assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js",
+              "src/assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js",
+              "src/assets/vendor/libs/cleavejs/cleave.js",
+              "src/assets/vendor/libs/cleavejs/cleave-phone.js",
+
+              "src/assets/js/tables-datatables.pt-br.js",
+              "src/assets/js/main/menu.js",
+              "src/assets/js/main.js",
+              "src/assets/js/app-user-list.js"
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "outputPath": "/inetpub/wwwroot-onemodelme-app/",
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "25mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -54,35 +112,37 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": { "inline": false}
+              }
             },
             "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": { "inline": false}
+              }
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "my-app:build"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "azure-static-web-app:build:production"
-            },
-            "development": {
-              "browserTarget": "azure-static-web-app:build:development"
+              "browserTarget": "my-app:build:production"
             }
-          },
-          "defaultConfiguration": "development"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "azure-static-web-app:build"
+            "browserTarget": "my-app:build"
           }
         },
         "test": {
@@ -101,9 +161,34 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "my-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-app:serve:production"
+            }
+          }
         }
       }
     }
   },
-  "defaultProject": "azure-studies-static-web-app-api"
+  "defaultProject": "my-app"
 }

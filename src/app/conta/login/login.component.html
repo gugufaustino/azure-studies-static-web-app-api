@@ -1,0 +1,64 @@
+<!-- Content -->
+
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner py-4">
+      <!-- Register -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+
+          <!-- /Logo -->
+          <h4 class="mb-2" ><span data-i18n="Welcome">Welcome</span> 👋</h4>
+          <p class="mb-4" data-i18n="Please sign-in to" >Please sign-in to your account and start the adventure</p>
+          <form class="mb-3" novalidate [formGroup]="componentForm" (ngSubmit)="submitForm()">
+
+            <div class="mb-3">
+              <label for="email" class="form-label" data-i18n="Email-or-Username">E-mail or Username</label>
+              <input formControlName="email" type="text" class="form-control" id="email" name="email-username" data-i18n-placeholder="Enter-your-email" autofocus/>
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between d-none">
+                <label class="form-label" for="password">Password</label>
+                <a href="auth-forgot-password-basic.html">
+                  <small>Forgot Password?</small>
+                </a>
+              </div>
+              <div class="input-group input-group-merge">
+                <input formControlName="password"  [type]="passwordType ? 'password' : 'text'" type="password" id="password" class="form-control" name="password"  placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                  aria-describedby="password" />
+                <span class="input-group-text cursor-pointer">
+                  <i class="bx" [class]="{ 'bx-hide' : !passwordType, 'bx-show' : passwordType }" (click)="togglePasswordType()" ></i>
+                </span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="form-check  d-none">
+                <input class="form-check-input" type="checkbox" id="remember-me" />
+                <label class="form-check-label" for="remember-me"> Remember Me </label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <br>
+              <button class="btn btn-primary d-grid w-100" type="submit" data-i18n="Sign in">Sign in</button>
+            </div>
+          </form>
+
+
+          <p class="text-center">
+            <span data-i18n="New-on-our-platform">New on our platform?</span>&nbsp;
+            <a [routerLink]="['/conta/cadastro']">
+              <span data-i18n="Create-an-account">Create an account</span>
+            </a>
+          </p>
+
+          <div class="divider my-4">
+            <div class="divider-text">&nbsp;</div>
+          </div>
+
+        </div>
+      </div>
+      <!-- /Register -->
+    </div>
+  </div>
+</div>

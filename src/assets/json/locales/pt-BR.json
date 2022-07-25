@@ -1,0 +1,26 @@
+{
+  "Dashboards": "Painel",
+
+  "View-all-notifications" : "Ver todas notificações",
+  "Records" : "Cadastros",
+  "Model Catalog" : "Catálogo de Modelos",
+  "Models" : "Modelos",
+  "My Profile" : "Meu Perfil",
+  "Settings" : "Configurações",
+  "Log Out" : "Sair",
+
+  "Welcome" : "Bem vindo",
+  "Welcome-mens" : "Olá, seja muito bem vindo a plataforma Onemodel.me",
+  "days-ago" : "5 dias atrás",
+  "Dark mode" : "Modo escuro",
+  "Light mode" : "Modo claro",
+
+  "Create-an-account" : "Criar Conta",
+  "Please sign-in to": "Faça login na sua conta e comece a aventura",
+  "Email-or-Username": "E-mail",
+
+  "Sign in" : "Entrar",
+  "New-on-our-platform" : "Novo em nossa plataforma?",
+  "Enter-your-email" : "Entre com seu e-mail"
+
+}

@@ -1,0 +1,57 @@
+.card{
+  background-color: #1b1f31;
+  min-height: 460px;
+  margin-bottom: 12px;
+}
+.card-header {
+  background-color: rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 0;
+  height: 168px;
+  padding-bottom: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.card-body{
+  padding-top:3px!important;
+  position: relative;
+}
+.card-modelo-caracteristica{
+  position: absolute;bottom: 5px;
+}
+
+.card-modelo-caracteristica span.label-carac{
+  font-size: 13px;
+  width: 90px;
+}
+
+/* box imagem  */
+.box-img-perfil{
+  width: 60%;
+  margin: auto;
+}
+
+
+
+.input-pesquisar{
+  background-color: #151827;
+  margin-right: 5px;
+}
+
+.content-result{
+  min-height: 472px;
+}
+
+.checkbox {
+  width: initial !important;
+}
+
+.demo-inline-spacing .badge{
+  margin-top: 7px !important;
+  font-size: 11px;
+}
+
+a{
+  color: #5a8dee;
+}

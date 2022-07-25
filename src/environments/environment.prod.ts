@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  urlServiceV1: "https://localhost:482/api/",
+  imagensPerfil: "https://localhost:482/images/profile/",
 };
